@@ -1,0 +1,313 @@
+/* ===== ESTILO NEVES ===== */
+
+/* Reset e Base */
+* {
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+    box-sizing: border-box; /* Inclui padding e border no cálculo */
+}
+
+html, body {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+}
+
+body {
+    background-color: #0f0f0f; /* Fundo muito escuro (mais escuro que index) */
+    color: #ffffff; /* Texto branco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna */
+    overflow-x: hidden; /* Remove scroll horizontal */
+}
+
+/* Header com gradiente azul */
+header {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espaço entre itens */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px 50px; /* Espaçamento interno */
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%); /* Gradiente azul para preto */
+    border-bottom: 2px solid #2563eb; /* Borda azul em baixo */
+}
+.logo-canto {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 150px; /* Ajuste o tamanho */
+    z-index: 1000;
+}
+header h2 {
+    font-size: 1.8rem; /* Título do perfil */
+    color: #2563eb; /* Cor azul */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+header nav {
+    display: flex; /* Flexbox */
+    gap: 25px; /* Espaçamento entre links */
+}
+
+header nav a {
+    color: #b3b3b3; /* Texto cinza claro */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1rem; /* Tamanho do texto */
+    transition: color 0.3s ease; /* Transição suave de cor */
+    cursor: pointer; /* Cursor pointer */
+}
+
+header nav a:hover {
+    color: #2563eb; /* Muda para azul ao hover */
+}
+
+/* Voltar */
+header a.voltar {
+    background-color: #2563eb; /* Fundo azul */
+    padding: 10px 20px; /* Padding interno */
+    border-radius: 5px; /* Cantos arredondados */
+    color: #ffffff; /* Texto branco */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+header a.voltar:hover {
+    background-color: #1d4ed8; /* Azul mais escuro */
+}
+
+.logo-canto {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 150px; /* Ajuste o tamanho */
+    z-index: 1000;
+}
+main {
+    padding: 40px 50px; /* Espaçamento interno */
+}
+
+/* Seção de Banner com perfil */
+.banner-perfil {
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 40px; /* Espaçamento entre imagem e conteúdo */
+    margin-bottom: 60px; /* Espaçamento abaixo */
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%); /* Gradiente de fundo */
+    padding: 30px; /* Padding interno */
+    border-radius: 15px; /* Cantos arredondados */
+    border-left: 5px solid #2563eb; /* Borda esquerda azul */
+}
+
+.banner-perfil img {
+    width: 180px; /* Largura */
+    height: 180px; /* Altura */
+    border-radius: 10px; /* Cantos arredondados */
+    border: 3px solid #2563eb; /* Borda azul */
+    object-fit: cover; /* Preenche sem distorcer */
+}
+
+.banner-info h1 {
+    font-size: 2.5rem; /* Tamanho grande */
+    color: #2563eb; /* Cor azul */
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    font-weight: 700; /* Negrito forte */
+}
+
+.banner-info p {
+    font-size: 1rem; /* Tamanho normal */
+    color: #b3b3b3; /* Texto cinza claro */
+    line-height: 1.6; /* Altura da linha */
+}
+
+/* Seções de Conteúdo */
+.secao-conteudo {
+    margin-bottom: 50px; /* Espaçamento abaixo */
+}
+
+.secao-conteudo h2 {
+    font-size: 1.8rem; /* Tamanho médio */
+    color: #2563eb; /* Cor azul */
+    margin-bottom: 20px; /* Espaçamento abaixo */
+    border-bottom: 2px solid #2563eb; /* Borda inferior azul */
+    padding-bottom: 10px; /* Padding abaixo */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Grid de Conteúdo */
+.grid-conteudo {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colunas responsivas */
+    gap: 20px; /* Espaçamento entre itens */
+}
+
+.item-conteudo {
+    background-color: #1a1a1a; /* Fundo escuro */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde conteúdo que sai */
+    cursor: pointer; /* Cursor pointer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    border: 2px solid transparent; /* Borda transparente */
+}
+
+.item-conteudo:hover {
+    transform: scale(1.08); /* Zoom ao hover */
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.5); /* Sombra azul */
+    border-color: #2563eb; /* Borda azul */
+}
+
+.item-conteudo img {
+    width: 100%; /* Largura total */
+    height: 200px; /* Altura fixa */
+    object-fit: cover; /* Preenche sem distorcer */
+}
+
+.item-titulo {
+    padding: 12px; /* Padding interno */
+    background-color: #0f0f0f; /* Fundo escuro */
+    font-size: 0.9rem; /* Texto pequeno */
+    color: #b3b3b3; /* Texto cinza claro */
+    text-align: center; /* Centraliza */
+}
+
+.item-conteudo:hover .item-titulo {
+    color: #2563eb; /* Texto azul ao hover */
+}
+
+/* Footer */
+footer {
+    padding: 40px 50px; /* Padding interno */
+    border-top: 2px solid #2563eb; /* Borda superior azul */
+    text-align: center; /* Centraliza */
+    color: #808080; /* Texto cinza escuro */
+    font-size: 0.9rem; /* Texto pequeno */
+    margin-top: 60px; /* Espaçamento acima */
+}
+
+/* Responsividade */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px; /* Padding reduzido */
+    }
+
+    main {
+        padding: 30px 30px; /* Padding reduzido */
+    }
+
+    .banner-perfil {
+        flex-direction: column; /* Organiza verticalmente */
+        text-align: center; /* Centraliza texto */
+    }
+
+    .banner-info h1 {
+        font-size: 2rem; /* Título menor */
+    }
+
+    .grid-conteudo {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Colunas menores */
+        gap: 15px; /* Espaçamento reduzido */
+    }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px; /* Padding pequeno */
+        flex-wrap: wrap; /* Quebra de linha */
+    }
+
+    header h2 {
+        font-size: 1.4rem; /* Título menor */
+    }
+
+    header nav {
+        gap: 15px; /* Espaçamento reduzido */
+    }
+
+    main {
+        padding: 20px 15px; /* Padding pequeno */
+    }
+
+    .banner-perfil {
+        padding: 20px; /* Padding reduzido */
+    }
+
+    .banner-perfil img {
+        width: 120px; /* Tamanho menor */
+        height: 120px; /* Tamanho menor */
+    }
+
+    .banner-info h1 {
+        font-size: 1.5rem; /* Título pequeno */
+    }
+
+    .secao-conteudo h2 {
+        font-size: 1.4rem; /* Título menor */
+    }
+
+    .grid-conteudo {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Colunas muito pequenas */
+        gap: 10px; /* Espaçamento reduzido */
+    }
+
+    .item-conteudo img {
+        height: 150px; /* Altura menor */
+    }
+
+    footer {
+        padding: 25px 15px; /* Padding reduzido */
+    }
+}
+
+/* Smartphone Pequeno */
+@media (max-width: 480px) {
+    header {
+        padding: 8px 12px; /* Padding mínimo */
+    }
+
+    header h2 {
+        font-size: 1.1rem; /* Título bem pequeno */
+    }
+
+    header nav {
+        gap: 10px; /* Espaçamento mínimo */
+        font-size: 0.9rem; /* Texto pequeno */
+    }
+
+    main {
+        padding: 15px 10px; /* Padding mínimo */
+    }
+
+    .banner-perfil {
+        padding: 15px; /* Padding mínimo */
+        gap: 15px; /* Espaçamento reduzido */
+    }
+
+    .banner-perfil img {
+        width: 100px; /* Tamanho bem pequeno */
+        height: 100px; /* Tamanho bem pequeno */
+    }
+
+    .banner-info h1 {
+        font-size: 1.3rem; /* Título bem pequeno */
+    }
+
+    .banner-info p {
+        font-size: 0.85rem; /* Texto pequeno */
+    }
+
+    .secao-conteudo h2 {
+        font-size: 1.2rem; /* Título pequeno */
+    }
+
+    .grid-conteudo {
+        grid-template-columns: repeat(2, 1fr); /* Apenas 2 colunas */
+        gap: 8px; /* Espaçamento mínimo */
+    }
+
+    .item-conteudo img {
+        height: 120px; /* Altura pequena */
+    }
+
+    footer {
+        padding: 15px 10px; /* Padding mínimo */
+        font-size: 0.8rem; /* Texto bem pequeno */
+    }
+}
