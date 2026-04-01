@@ -138,6 +138,21 @@ main {
     border-bottom: none;
     padding-bottom: 0;
 }
+.container-imagem {
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+
+.barra-progresso-total {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #4d4d4d;
+}
+
 
 /* Grid de Conteúdo Estilo "Poster" */
 .grid-conteudo {
@@ -170,9 +185,40 @@ main {
 .item-conteudo img {
     width: 100%;
     height: auto;
-    aspect-ratio: 2 / 3; /* Formato de poster vertical (2:3) */
     object-fit: cover;
+    object-position: left;
     border-radius: 4px;
+}
+.barra-progresso-total {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #4d4d4d;
+}
+
+/* Parte vermelha (o que já foi assistido) */
+.progresso-atual {
+    height: 100%;
+    background-color: #E50914; /* Vermelho Netflix */
+}
+
+/* Ajuste no título para parecer sub-legenda */
+.item-titulo {
+    font-size: 0.75rem;
+    padding: 8px;
+    background-color: #1a1a1a;
+    text-align: left;
+    color: #e5e5e5;
+}
+/* Grid de Conteúdo Estilo "Poster" */
+.grid-conteudo {
+    display: flex;
+    overflow-x: auto; /* Permite scroll horizontal como na TV */
+    gap: 8px;
+    padding: 10px 0;
+    scrollbar-width: none; /* Esconde scroll no Firefox */
 }
 
 .item-titulo {
@@ -208,4 +254,12 @@ footer {
         max-width: 140px;
     }
     .secao-conteudo h2 { font-size: 1.2rem; }
+}
+
+.container:hover .item-conteudo:not(:hover){
+    opacity: 0.3;
+}
+
+.item-conteudo {
+    transition: transform 0.4s, opacity 0.3s;
 }

@@ -116,8 +116,9 @@ main {
 .banner-perfil img {
     width: 150px;
     height: 150px;
-    border-radius: 4px; /* Perfis Netflix são quadrados com cantos levemente arredondados */
+    border-radius: 8px; 
     object-fit: cover;
+    object-position: top; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
@@ -135,7 +136,7 @@ main {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
 }
 
-/* Seções de Conteúdo (Fileiras) */
+/* Seções de Conteúdo (Fileiras)*/
 .secao-conteudo {
     margin-bottom: 3vw;
 }
@@ -150,10 +151,10 @@ main {
 }
 .container-imagem {
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
-/* Fundo cinza da barra (o que falta assistir) */
+
 .barra-progresso-total {
     position: absolute;
     bottom: 0;
@@ -208,8 +209,8 @@ main {
 .item-conteudo img {
     width: 100%;
     height: auto;
-    aspect-ratio: 2 / 3; /* Formato de poster vertical (2:3) */
     object-fit: cover;
+    object-position: left;
     border-radius: 4px;
 }
 
@@ -246,4 +247,12 @@ footer {
         max-width: 140px;
     }
     .secao-conteudo h2 { font-size: 1.2rem; }
+}
+
+.container:hover .item-conteudo:not(:hover){
+    opacity: 0.3;
+}
+
+.item-conteudo {
+    transition: transform 0.4s, opacity 0.3s;
 }
