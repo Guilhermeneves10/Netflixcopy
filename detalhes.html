@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Detalhes</title>
+    <link rel="stylesheet" href="detalhes.css">
+</head>
+<body>
+    <header class="detalhes-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="banner.png" alt="Netflix" class="logo-nav">
+            </a>
+            <nav class="detalhes-nav" aria-label="Navegação principal">
+                <a id="link-series" href="series.html">Séries</a>
+                <a id="link-filmes" href="filmes.html">Filmes</a>
+            </nav>
+        </div>
+        <a class="voltar" id="link-voltar" href="index.html">Voltar</a>
+    </header>
+
+    <main class="detalhes-main">
+        <section class="hero-detalhes" id="hero-detalhes">
+            <div class="poster-wrap" id="poster-wrap"></div>
+            <div class="detalhes-info">
+                <p class="eyebrow">Detalhes</p>
+                <h1 id="titulo-detalhes">Carregando...</h1>
+                <p class="meta" id="meta-detalhes"></p>
+                <p class="plot" id="plot-detalhes">Buscando dados na OMDb.</p>
+                <div class="chips" id="chips-detalhes"></div>
+            </div>
+        </section>
+
+        <section class="extra-detalhes">
+            <div class="linha-info">
+                <strong>Direção</strong>
+                <span id="diretor-detalhes">-</span>
+            </div>
+            <div class="linha-info">
+                <strong>Elenco</strong>
+                <span id="elenco-detalhes">-</span>
+            </div>
+            <div class="linha-info">
+                <strong>Prêmios</strong>
+                <span id="premios-detalhes">-</span>
+            </div>
+            <div class="linha-info">
+                <strong>IMDb</strong>
+                <span id="nota-detalhes">-</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="detalhes.js"></script>
+</body>
+</html>

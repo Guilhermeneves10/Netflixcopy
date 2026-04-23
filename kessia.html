@@ -1,60 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix - Perfil Kessia</title>
-    <link rel="stylesheet" href="../styles/kessia.css">
+    <link rel="stylesheet" href="perfil.css">
 </head>
-<body>
-    <header>
-         <div class="header-left">
-        <a href="../Index.html">
-            <img src="../Img/Design_sem_nome__1_-removebg-preview.png" alt="Netflix" class="logo-nav">
-        </a>
-        <h2 class="nome-perfil">Kessia</h2>
-    </div>
-    <nav>
-        <a href="#series">Séries</a>
-        <a href="#filmes">Filmes</a>
-        <a class="voltar" href="../Index.html">Trocar Perfil</a>
-    </nav>
-        <nav>
-            <a class="voltar" href="../Index.html">← Voltar</a>
+<body data-profile="kessia">
+    <header class="page-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="banner.png" alt="Netflix" class="logo-nav">
+            </a>
+            <h2 class="nome-perfil">Kessia</h2>
+        </div>
+
+        <nav class="header-nav" aria-label="Navegacao do perfil">
+            <a href="series.html?perfil=kessia">Series</a>
+            <a href="filmes.html?perfil=kessia">Filmes</a>
+            <a class="voltar" href="index.html">Trocar perfil</a>
         </nav>
     </header>
 
     <main>
-        <!-- Banner do Perfil -->
         <section class="banner-perfil">
-            <img src="../Img/perfil2.png" alt="Foto de perfil Kessia">
+            <img src="foto_perfil2.png" alt="Foto de perfil Kessia">
             <div class="banner-info">
+                <p class="destaque">Perfil</p>
                 <h1>Bem-vinda, Kessia!</h1>
-                <p>Aqui você pode adicionar seus conteúdos favoritos!</p>
+                <p>Um espaco organizado para voce acompanhar series e montar sua lista.</p>
             </div>
         </section>
 
-        <!-- Espaço para conteúdo -->
-        <section>
-            <h2>Continuar assistindo como Kessia</h2>
-    <div class="grid-conteudo">
-        
-        <div class="item-conteudo">
-            <div class="container-imagem">
-                <img src="../Img/logoserie.png" alt="Nome da Série">
-                <div class="barra-progresso-total">
-                    <div class="progresso-atual" style="width: 70%;"></div>
-                </div>
+        <section class="secao-conteudo" id="series">
+            <div class="secao-cabecalho">
+                <h2>Continuar assistindo</h2>
+                <span>Series</span>
             </div>
-            <div class="item-titulo">S1:E1 - O menino que sobreviveu</div>
-        </div>
 
-        </div>
+            <div class="grid-conteudo">
+                <article class="item-conteudo">
+                    <a class="item-link" href="detalhes.html?id=tt0117571&perfil=kessia">
+                        <div class="container-imagem">
+                            <img src="banner filme panico.jfif" alt="Capa do conteúdo">
+                            <div class="barra-progresso-total">
+                                <div class="progresso-atual" style="width: 70%;"></div>
+                            </div>
+                            <div class="item-hover">
+                                <div class="acoes-hover">
+                                    <span class="acao-principal" aria-hidden="true">Play</span>
+                                    <span class="acao-secundaria" aria-hidden="true">+</span>
+                                </div>
+                                <p class="item-meta">96% relevante 1996 111 min</p>
+                                <p class="item-genero">Slasher suspense</p>
+                            </div>
+                        </div>
+                        <div class="item-titulo">Pânico</div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-conteudo" id="filmes">
+            <div class="secao-cabecalho">
+                <h2>Minha lista</h2>
+                <span>Filmes</span>
+            </div>
+
+            <div class="grid-conteudo">
+                <article class="item-conteudo">
+                    <a class="item-link" href="detalhes.html?id=tt0241527&perfil=kessia">
+                        <div class="container-imagem">
+                            <img src="banner filme hp.jfif" alt="Capa da lista pessoal">
+                            <div class="barra-progresso-total">
+                                <div class="progresso-atual" style="width: 55%;"></div>
+                            </div>
+                            <div class="item-hover">
+                                <div class="acoes-hover">
+                                    <span class="acao-principal" aria-hidden="true">Play</span>
+                                    <span class="acao-secundaria" aria-hidden="true">+</span>
+                                </div>
+                                <p class="item-meta">94% relevante 2001 152 min</p>
+                                <p class="item-genero">Fantasia aventura</p>
+                            </div>
+                        </div>
+                        <div class="item-titulo">Harry Potter e a Pedra Filosofal</div>
+                    </a>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Netflix Clone - Perfil Kessia</p>
     </footer>
+    <script src="perfil.js"></script>
 </body>
 </html>

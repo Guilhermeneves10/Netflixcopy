@@ -1,350 +1,109 @@
-/* Reset e Base */
 * {
-    margin: 0; /* Remove margem padrão de todos os elementos */
-    padding: 0; /* Remove preenchimento padrão de todos os elementos */
-    box-sizing: border-box; /* Inclui padding e border no cálculo da largura/altura */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-    width: 100%; /* Define largura máxima da página */
-    height: 100%; /* Define altura máxima da página */
+:root {
+    color-scheme: dark;
 }
 
 body {
-    background-color: #141414; /* Cor de fundo escura (padrão Netflix) */
-    color: #ffffff; /* Cor padrão do texto branco */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
-    overflow-x: hidden; /* Remove barra de scroll horizontal */
-}
-
-/* Header */
-header {
-    display: flex; /* Ativa flexbox para disposição horizontal */
-    justify-content: space-between; /* Distribui itens com espaço entre eles */
-    align-items: center; /* Centraliza itens verticalmente */
-    padding: 20px 50px; /* Espaçamento interno (20px vertical, 50px horizontal) */
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent); /* Gradiente preto opaco que desaparece */
-}
-header .logo {
-    width: 150px;
-    margin: 20px 4%;
-    display: block;
-}
-
-header nav {
-    display: flex; /* Ativa flexbox para disposição horizontal */
-    gap: 30px; /* Espaçamento entre itens do menu */
-}
-.logo-canto {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 150px; /* Ajuste o tamanho */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-}
-
-/* Main */
-main {
-    display: flex; /* Ativa flexbox para disposição */
-    flex-direction: column; /* Organiza elementos verticalmente */
-    justify-content: center; /* Centraliza itens verticalmente */
-    align-items: center; /* Centraliza itens horizontalmente */
-    min-height: calc(100vh - 150px); /* Altura mínima é a viewport menos header/footer */
-    padding: 30px 20px; /* Espaçamento interno */
-}
-
-main h1 {
-    font-size: 3.5rem; /* Tamanho grande do título */
-    font-weight: 700; /* Texto em negrito forte */
-    margin-bottom: 60px; /* Espaçamento abaixo do título */
-    text-align: center; /* Centraliza texto */
-    letter-spacing: 2px; /* Aumenta espaçamento entre letras */
-}
-
-/* Section de Perfis */
-section.perfiles {
-    display: grid; /* Ativa grid layout para organizar perfis */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria colunas responsivas com mínimo de 200px */
-    gap: 40px; /* Espaçamento entre perfis */
-    max-width: 1200px; /* Largura máxima da seção */
-    width: 100%; /* Ocupar toda a largura disponível */
-    padding: 20px; /* Espaçamento interno */
-    
-}
-
-/* Article - Cada Perfil */
-article.perfile {
-    display: flex; /* Ativa flexbox */
-    flex-direction: column; /* Organiza conteúdo verticalmente */
-    align-items: center; /* Centraliza conteúdo horizontalmente */
-    cursor: pointer; /* Muda cursor para indicar que é clicável */
-    transition: transform 0.3s ease; /* Suaviza animações de transformação por 0.3s */
-    
-}
-
-article.perfile:hover {
-    transform: scale(1.05); /* Aumenta o perfil em 5% ao passar o mouse */
-}
-
-/* Figure e Figcaption */
-article.perfile figure {
-    position: relative; /* Posicionamento relativo para o container da imagem */
-    width: 100%; /* Ocupar 100% da largura do perfil */
-    margin-bottom: 20px; /* Espaçamento abaixo da figura */
-    border-radius: 10px; /* Cantos arredondados */
-    overflow: visible; /* Deixa figcaption visível */
-    display: flex; /* Ativa flexbox */
-    flex-direction: column; /* Organiza verticalmente */
-    align-items: center; /* Centraliza figcaption */
-}
-
-article.perfile figure img {
-    width: 100%; /* Ocupar 100% da largura */
-    aspect-ratio: 1 / 1; /* Mantém a imagem quadrada */
-    object-fit: cover; /* Preenche o espaço mantendo proporção da imagem */
-    border: 3px solid transparent; /* Borda transparente (muda ao hover) */
-    border-radius: 10px; /* Cantos arredondados */
-    transition: all 0.3s ease; /* Suaviza todas as mudanças de estilo */
-    filter: brightness(0.9); /* Reduz o brilho em 10% */
-}
-
-article.perfile:hover figure img {
-    border-color: #e50914;
-    filter: brightness(1.1);
-    box-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
-}
-
-article.perfile figcaption {
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-    color: #b3b3b3;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-article.perfile:hover figcaption {
+    min-height: 100vh;
+    background: #141414;
     color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Footer */
-footer {
-    padding: 40px 50px;
-    border-top: 1px solid #404040;
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.topo {
+    padding: 1.25rem clamp(1rem, 4vw, 3rem);
+}
+
+.logo {
+    width: clamp(7rem, 16vw, 10rem);
+    height: auto;
+}
+
+main {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto;
+    min-height: calc(100vh - 6rem);
+    display: grid;
+    align-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: 1rem 0 4rem;
+}
+
+h1 {
     text-align: center;
-    color: #808080;
-    font-size: 0.9rem;
+    font-size: clamp(1.8rem, 4vw, 3.75rem);
+    line-height: 1.1;
 }
 
-/* Responsividade */
-
-/* Desktop Extra Grande (1400px+) */
-@media (min-width: 1400px) {
-    section.perfiles {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 4-5 perfis por linha */
-        gap: 50px; /* Espaçamento generoso */
-    }
-
-    main h1 {
-        font-size: 4rem; /* Título bem grande */
-        margin-bottom: 80px; /* Espaçamento amplo */
-    }
-
-    header {
-        padding: 25px 60px; /* Padding generoso */
-    }
+.perfiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
 }
 
-/* Desktop Grande (1200px - 1399px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    section.perfiles {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3-4 perfis por linha */
-        gap: 40px; /* Espaçamento adequado */
-    }
-
-    main h1 {
-        font-size: 3.5rem; /* Título grande */
-        margin-bottom: 60px; /* Espaçamento médio */
-    }
-
-    header {
-        padding: 20px 50px; /* Padding padrão */
-    }
+.perfile {
+    cursor: pointer;
+    transition: transform 0.25s ease;
 }
 
-/* Tablet Grande / Desktop Pequeno (1024px - 1199px) */
-@media (min-width: 1024px) and (max-width: 1199px) {
-    section.perfiles {
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* 3 perfis por linha */
-        gap: 35px; /* Espaçamento reduzido */
-    }
-
-    main h1 {
-        font-size: 3rem; /* Título médio */
-        margin-bottom: 50px; /* Espaçamento reduzido */
-    }
-
-    header {
-        padding: 18px 40px; /* Padding reduzido */
-    }
+.perfile:hover,
+.perfile:focus-within {
+    transform: translateY(-6px);
 }
 
-/* Tablet Médio (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    section.perfiles {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 2-3 perfis por linha */
-        gap: 25px; /* Espaçamento moderado */
-    }
-
-    main h1 {
-        font-size: 2.2rem; /* Título menor */
-        margin-bottom: 40px; /* Espaçamento menor */
-    }
-
-    article.perfile figcaption {
-        font-size: 0.95rem; /* Texto um pouco menor */
-    }
-
-    header {
-        padding: 15px 30px; /* Padding reduzido */
-    }
+.perfile figure {
+    display: grid;
+    gap: 0.9rem;
+    justify-items: center;
 }
 
-/* Tablet Pequeno (600px - 767px) */
-@media (min-width: 600px) and (max-width: 767px) {
-    section.perfiles {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 perfis por linha */
-        gap: 20px; /* Espaçamento pequeno */
-    }
-
-    main h1 {
-        font-size: 1.8rem; /* Título pequeno */
-        margin-bottom: 30px; /* Espaçamento pequeno */
-    }
-
-    article.perfile figcaption {
-        font-size: 0.85rem; /* Texto pequeno */
-    }
-
-    header {
-        padding: 12px 25px; /* Padding pequeno */
-    }
-
-    footer {
-        padding: 25px 30px; /* Footer menor */
-    }
+.perfile img {
+    width: min(100%, 220px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    filter: brightness(0.92);
 }
 
-/* Smartphone Grande (480px - 599px) */
-@media (min-width: 480px) and (max-width: 599px) {
-    section.perfiles {
-        grid-template-columns: repeat(2, 1fr); /* Exatamente 2 perfis por linha */
-        gap: 15px; /* Espaçamento mínimo */
-    }
+.perfile:hover img,
+.perfile:focus-within img {
+    border-color: #e50914;
+    box-shadow: 0 0 24px rgba(229, 9, 20, 0.35);
+    filter: brightness(1.04);
+}
 
-    main h1 {
-        font-size: 1.4rem; /* Título bem pequeno */
-        margin-bottom: 20px; /* Espaçamento mínimo */
-    }
+.perfile figcaption {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    color: #c8c8c8;
+    text-align: center;
+}
 
-    article.perfile:hover {
-        transform: scale(1.03); /* Zoom reduzido em mobile */
-    }
-
-    article.perfile figcaption {
-        font-size: 0.8rem; /* Texto muito pequeno */
-    }
-
-    header {
-        padding: 10px 15px; /* Padding mínimo */
-        flex-direction: column; /* Menu verticalmente */
-        gap: 10px; /* Espaçamento entre elementos */
-    }
-
+@media (max-width: 540px) {
     main {
-        padding: 20px 10px; /* Padding reduzido */
+        width: min(100% - 1rem, 1100px);
+        min-height: auto;
+        padding-bottom: 2rem;
     }
 
-    footer {
-        padding: 20px 15px; /* Footer compacto */
-        font-size: 0.8rem; /* Texto menor */
-    }
-}
-
-/* Smartphone Médio (375px - 479px) */
-@media (min-width: 375px) and (max-width: 479px) {
-    section.perfiles {
-        grid-template-columns: repeat(2, 1fr); /* 2 perfis por linha */
-        gap: 12px; /* Espaçamento bem pequeno */
-    }
-
-    main h1 {
-        font-size: 1.3rem; /* Título compacto */
-        margin-bottom: 15px; /* Espaçamento compacto */
-        letter-spacing: 0.5px; /* Letra spacing reduzido */
-    }
-
-    article.perfile figcaption {
-        font-size: 0.75rem; /* Texto compacto */
-    }
-
-    header {
-        padding: 8px 12px; /* Padding extremamente pequeno */
-        gap: 5px; /* Gap reduzido */
-    }
-
-    header nav {
-        gap: 15px; /* Gap do menu menor */
-    }
-
-    main {
-        padding: 15px 8px; /* Padding mínimo */
-    }
-
-    footer {
-        padding: 15px 12px; /* Footer minimal */
+    .perfiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* Smartphone Pequeno (320px - 374px) */
-@media (max-width: 374px) {
-    section.perfiles {
-        grid-template-columns: repeat(2, 1fr); /* 2 perfis por linha */
-        gap: 10px; /* Espaçamento mínimo */
-    }
-
-    main h1 {
-        font-size: 1.1rem; /* Título bem pequeno */
-        margin-bottom: 12px; /* Espaçamento mínimo */
-        letter-spacing: 0px; /* Remove letter spacing */
-    }
-
-    article.perfile:hover {
-        transform: scale(1.02); /* Zoom bem reduzido */
-    }
-
-    article.perfile figcaption {
-        font-size: 0.7rem; /* Texto muito pequeno */
-        margin-top: 5px; /* Reduz margin */
-    }
-
-    header {
-        padding: 6px 10px; /* Padding extremo */
-        gap: 5px; /* Gap pequeno */
-    }
-
-    header nav {
-        gap: 10px; /* Menu mais compacto */
-        display: none; /* Esconde navegação em dispositivos muito pequenos */
-    }
-
-    main {
-        padding: 10px 8px; /* Padding minimal */
-        min-height: calc(100vh - 120px); /* Ajusta altura */
-    }
-
-    footer {
-        padding: 12px 10px; /* Footer minimal */
-        font-size: 0.7rem; /* Fonte bem pequena */
+@media (max-width: 360px) {
+    .perfiles {
+        grid-template-columns: 1fr;
     }
 }

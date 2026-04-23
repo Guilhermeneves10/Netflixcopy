@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(229, 9, 20, 0.14), transparent 28%),
+        linear-gradient(180deg, #0f0f0f 0%, #141414 100%);
+    color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.detalhes-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem clamp(1rem, 4vw, 3rem);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.48));
+    backdrop-filter: blur(10px);
+}
+
+.header-left,
+.detalhes-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.logo-nav {
+    width: clamp(7rem, 15vw, 9rem);
+}
+
+.detalhes-nav a,
+.voltar {
+    text-decoration: none;
+}
+
+.voltar {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 6px;
+    padding: 0.55rem 0.9rem;
+}
+
+.detalhes-main {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem) 0 4rem;
+}
+
+.hero-detalhes {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    gap: clamp(1.25rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.poster-wrap img,
+.poster-fallback {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+}
+
+.poster-wrap img {
+    object-fit: cover;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.poster-fallback {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background:
+        linear-gradient(180deg, rgba(229, 9, 20, 0.2), rgba(255, 255, 255, 0.04)),
+        #202020;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.detalhes-info {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+}
+
+.eyebrow {
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+}
+
+.detalhes-info h1 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.02;
+}
+
+.meta,
+.plot,
+.linha-info span {
+    color: #d4d4d4;
+    line-height: 1.7;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.chips span {
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+    font-size: 0.88rem;
+}
+
+.extra-detalhes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.linha-info {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+@media (max-width: 800px) {
+    .detalhes-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-detalhes {
+        grid-template-columns: 1fr;
+    }
+
+    .poster-wrap {
+        width: min(320px, 100%);
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Filmes</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body data-tipo="filmes">
+    <header class="catalogo-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="banner.png" alt="Netflix" class="logo-nav">
+            </a>
+            <nav class="catalogo-nav" aria-label="Navegacao principal">
+                <a href="series.html">Series</a>
+                <a href="filmes.html" class="ativo">Filmes</a>
+            </nav>
+        </div>
+        <a class="voltar" href="index.html">Trocar perfil</a>
+    </header>
+
+    <main class="catalogo-main">
+        <section class="hero-catalogo">
+            <p class="eyebrow">Catalogo</p>
+            <h1 id="titulo-catalogo">Filmes</h1>
+            <p id="descricao-catalogo">Carregue aqui os filmes vindos da sua API.</p>
+            <form class="barra-pesquisa" id="form-busca">
+                <label class="sr-only" for="campo-busca">Pesquisar filmes</label>
+                <input id="campo-busca" name="busca" type="search" placeholder="Pesquisar filmes na OMDb">
+                <label class="sr-only" for="campo-ano">Filtrar por ano</label>
+                <input id="campo-ano" name="ano" type="number" min="1900" max="2100" placeholder="Ano">
+                <label class="sr-only" for="campo-tipo">Tipo de conteúdo</label>
+                <select id="campo-tipo" name="tipo">
+                    <option value="movie">Filmes</option>
+                    <option value="series">Séries</option>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+            <p class="api-alerta">Sua chave da OMDb continua visível no front-end. Para produção, o ideal é buscar por um backend.</p>
+        </section>
+
+        <section class="bloco-catalogo">
+            <div class="bloco-topo">
+                <h2 id="subtitulo-catalogo">Destaques</h2>
+                <p id="perfil-catalogo">Perfil atual</p>
+            </div>
+            <div class="catalogo-grid" id="catalogo-grid"></div>
+            <div class="paginacao">
+                <button type="button" id="pagina-anterior">Anterior</button>
+                <span id="pagina-info">Página 1</span>
+                <button type="button" id="pagina-proxima">Próxima</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="catalogo.js"></script>
+</body>
+</html>

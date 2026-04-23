@@ -1,66 +1,31 @@
-// Configurar redirecionamento dos perfis
-document.addEventListener('DOMContentLoaded', function() {
-    // Array com os dados dos perfis e suas páginas respectivas
+document.addEventListener("DOMContentLoaded", function () {
     const perfis = [
-        {
-            nome: 'Neves',
-            pagina: 'pgn/neves.html' // Página de Neves
-        },
-        {
-            nome: 'Kessia',
-            pagina: 'pgn/kessia.html' // Página de Kessia
-        },
-        {
-            nome: 'Julia',
-            pagina: 'pgn/julia.html' // Página de Julia
-        }
+        { nome: "Neves", pagina: "neves.html" },
+        { nome: "Kessia", pagina: "kessia.html" },
+        { nome: "Julia", pagina: "julia.html" }
     ];
 
-    // Selecionar todos os artigos de perfil
-    const perfilesArticles = document.querySelectorAll('article.perfile');
+    const perfilesArticles = document.querySelectorAll("article.perfile");
 
-    // Adicionar evento de clique a cada perfil
     perfilesArticles.forEach((perfil, index) => {
-        // Adicionar cursor pointer para indicar que é clicável
-        perfil.style.cursor = 'pointer';
+        perfil.style.cursor = "pointer";
+        perfil.setAttribute("tabindex", "0");
+        perfil.setAttribute("role", "button");
+        perfil.setAttribute("aria-label", `Ir para o perfil de ${perfis[index].nome}`);
 
-        // Adicionar evento de clique
-        perfil.addEventListener('click', function() {
-            // Redirecionar para a página do perfil
+        const abrirPerfil = function () {
             if (perfis[index]) {
+                localStorage.setItem("netflixPerfilAtual", perfis[index].pagina.replace(".html", ""));
                 window.location.href = perfis[index].pagina;
             }
-        });
+        };
 
-        // Adicionar evento de teclado para acessibilidade (Enter ou Space)
-        perfil.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                if (perfis[index]) {
-                    window.location.href = perfis[index].pagina;
-                }
+        perfil.addEventListener("click", abrirPerfil);
+        perfil.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                abrirPerfil();
             }
         });
-
-        // Tornar o perfil focável com tab (acessibilidade)
-        perfil.setAttribute('tabindex', '0');
-        perfil.setAttribute('role', 'button');
-        perfil.setAttribute('aria-label', `Ir para o perfil de ${perfis[index].nome}`);
     });
-
-    // Efeito adicional: adicionar feedback visual ao clicar
-    perfilesArticles.forEach((perfil) => {
-        perfil.addEventListener('mousedown', function() {
-            this.style.transform = 'scale(0.98)'; // Pequeno encolhimento ao clicar
-        });
-
-        perfil.addEventListener('mouseup', function() {
-            this.style.transform = 'scale(1.05)'; // Volta ao hover normal
-        });
-
-        perfil.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)'; // Volta ao normal se sair
-        });
-    });
-
-    console.log('Script de perfis ativado!');
 });
